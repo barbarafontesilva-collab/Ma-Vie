@@ -1,0 +1,10 @@
+MA VIE - app de rotina (PWA)
+
+Arquivos:
+- index.html: o app inteiro (cores e visual ficam no <style> no topo; dados padrao na funcao def())
+- manifest.webmanifest: nome, cores e icones do app instalado
+- icon-192.png, icon-512.png, icon-maskable-512.png, apple-touch-icon.png: icones
+- sw.js: necessario para o Chrome oferecer 'Instalar app'
+
+Hospede todos esses arquivos juntos, na mesma pasta, num servico com https (GitHub Pages, Netlify).
+Seus dados ficam no navegador do aparelho. Para levar do app antigo: Ajustes > Gerar backup, depois no novo: Ajustes > Carregar backup.

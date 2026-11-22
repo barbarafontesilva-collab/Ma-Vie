@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ma vie</title>
+<meta name="application-name" content="Ma vie"><meta name="apple-mobile-web-app-title" content="Ma vie"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#6D1230">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#F8F0F2;--card:#fff;--ink:#2B1119;--mut:#7A5A64;--line:#E6D3D8;--acc:#7A1F3D;--on:#fff;--plantao:#1F4E9C;--inj:#0B6E63;--lembrete:#B7791F;--aula:#7B3FA0;--feriado:#C0392B;--pdse:#C2410C;--estudo:#6B7A1F;--treino:#B5338A;--saude:#2F9E6B;--conta:#8A6D1D;--dout:#5B4B9A;color-scheme:light;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C0B12;--card:#2A121B;--ink:#F5E8EC;--mut:#BE98A4;--line:#44202D;--acc:#E58AA6;--on:#2A0A14;--plantao:#6C97E6;--feriado:#E8776A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1C0B12;--card:#2A121B;--ink:#F5E8EC;--mut:#BE98A4;--line:#44202D;--acc:#E58AA6;--on:#2A0A14;--plantao:#6C97E6;--feriado:#E8776A;color-scheme:dark}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.45 'Schibsted Grotesk',system-ui,sans-serif;padding:0 16px 96px;max-width:560px;margin:0 auto}
+h2,h3{margin:0;line-height:1.15}
+h3{font-size:16px;margin-bottom:6px}
+.big{font-size:68px;font-weight:800;letter-spacing:-3px;line-height:1}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+small,.m{color:var(--mut);font-size:13px}
+.ev{display:flex;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line);cursor:pointer}
+.ev:first-of-type{border-top:0}
+.ev i{width:6px;align-self:stretch;border-radius:3px;flex:none}
+.ev small{display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+input,select,textarea{width:100%;padding:9px;border:1px solid var(--line);border-radius:9px;background:var(--bg)}
+button{border:0;border-radius:9px;padding:9px 14px;background:var(--acc);color:var(--on);font-weight:600}
+button.g{background:transparent;color:var(--acc);border:1px solid var(--line)}
+button.r{background:var(--feriado);color:#fff}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:3}
+nav button{flex:1;background:none;color:var(--mut);border-radius:0;padding:14px 0}
+nav button.on{color:var(--acc);box-shadow:inset 0 3px var(--acc)}
+.g7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.dy{aspect-ratio:1;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink);padding:2px;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.dy.pl{background:color-mix(in srgb,var(--plantao) 20%,transparent)}
+.dy.sel{border-color:var(--acc)}
+.dy.td{outline:2px solid var(--ink)}
+.dts{display:flex;gap:2px;height:6px}.dts b{width:6px;height:6px;border-radius:50%}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:8px}.bar b{display:block;height:100%;background:var(--acc)}
+.bk{position:fixed;inset:0;background:#0007;z-index:4}
+.sh{position:fixed;left:0;right:0;bottom:0;max-height:90%;overflow:auto;background:var(--card);border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));z-index:5;max-width:560px;margin:0 auto}
+label{display:block;margin:10px 0 0;font-size:13px;color:var(--mut)}
+.rw{display:flex;gap:8px;align-items:center}
+.rw>*{flex:1}.rw>button{flex:none}
+.t3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.t3 div{background:var(--bg);border-radius:10px;padding:10px}.t3 b{font-size:26px;display:block;line-height:1.1}
+.ck{display:flex;gap:10px;align-items:center;color:var(--ink);font-size:16px;margin:6px 0}.ck input{width:20px;height:20px;flex:none}
+.cp{padding:12px 0;border-top:1px solid var(--line)}.cp:first-of-type{border-top:0}
+.cp input[type=number]{max-width:72px}
+.tl{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.tl button{display:flex;align-items:center;gap:10px;padding:14px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;font-size:16px;text-align:left}.tl span{font-size:26px}
+</style></head><body>
+<main id="v"></main><nav id="nav"></nav><div id="sheet"></div>
+<script>
+const K='rotina_barbara_v1';
+const T={inj:'Pegasus',lembrete:'Lembrete',saude:'Saúde (nutri, exames)',conta:'Conta ou pagamento',dout:'Doutorado',aula:'Aula',pdse:'PDSE',estudo:'Estudo ou prova',feriado:'Feriado ou recesso'};
+const WD=['dom','seg','ter','qua','qui','sex','sáb'],MS=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const $=s=>document.querySelector(s),p2=n=>String(n).padStart(2,'0');
+const iso=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());
+const P=s=>{const a=s.split('-').map(Number);return new Date(a[0],a[1]-1,a[2])};
+const add=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const dd=(a,b)=>Math.round((P(a)-P(b))/864e5);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const br=s=>{const a=s.split('-');return a[2]+'/'+a[1]},brY=s=>br(s)+'/'+s.slice(0,4);
+function mkEst(){return [['Português (10 questões, peso 3)',['Interpretação e compreensão de texto (coesão, coerência, intertextualidade)','Tipos textuais (informativo, normativo, didático; literários e não literários)','Estrutura da frase, norma culta, pontuação e sinais gráficos','Organização sintática (termos e orações, ordem direta e inversa)','Linguagem (registros, funções da linguagem, elementos da comunicação)','Formação de palavras e classes de palavras','Semântica (sentido próprio e figurado, sinônimos, antônimos, polissemia)','Dicionários e vocabulário (neologismos, estrangeirismos)','Ortografia e acentuação gráfica']],
+['Inglês (10 questões, peso 1)',['Compreensão de textos técnicos e institucionais','Vocabulário técnico (prefixos, sufixos, cognatos e falsos cognatos)','Estratégias de leitura (skimming, scanning)','Textos normativos e técnicos (normas, segurança, qualidade)']],
+['Conhecimento de Normas (10 questões, peso 2)',['Art. 37 da CF e responsabilidade administrativa','Lei 9.784/1999 (processo administrativo)','Lei 12.846/2013 e Decreto 11.129/2022 (anticorrupção)','Lei 14.230/2021 (improbidade administrativa)','Lei 12.527/2011 (Lei de Acesso à Informação)','Conflito de interesses e governança corporativa','LGPD (Lei 13.709/2018) e segurança da informação','Segurança nuclear e radiológica (ANSN, CNEN, radioproteção)','NR-01 e prevenção de acidentes industriais','Normas ambientais (Lei 6.938/1981, licenciamento, resíduos industriais)','Normas técnicas industriais (qualidade e gestão de processos)']],
+['Química geral (Específicos: 30 questões, peso 3)',['Estrutura atômica (modelos, distribuição eletrônica, tabela periódica)','Ligações químicas e forças intermoleculares','Estequiometria (leis ponderais, cálculos, reagente limitante)','Soluções (concentração, diluição, propriedades coligativas)','Equilíbrio químico (constante, Le Chatelier)']],
+['Físico-química',['Comportamento PVT, equação do virial, estados correspondentes','Primeira lei da termodinâmica (sistemas fechados e abertos)','Segunda lei e entropia','Relações entre propriedades termodinâmicas e propriedades residuais','Equações de estado','Equilíbrio químico (mono e multirreacionais, mono e multifásicos)','Cinética de reações homogêneas, rendimento e seletividade','Determinação de parâmetros cinéticos']],
+['Química analítica',['Análise qualitativa','Volumetria e gravimetria','Métodos instrumentais (espectrofotometria, cromatografia, espectrometria)','Preparo de soluções (padronização, calibração)','Tratamento de dados (precisão, exatidão, incerteza)']],
+['Química orgânica',['Funções orgânicas','Reações orgânicas (substituição, adição, eliminação)','Polímeros']],
+['Química inorgânica',['Ácidos, bases, sais e óxidos','Reações (neutralização, precipitação, oxirredução)','Química de coordenação']],
+['Controle de qualidade e processos químicos',['Controle de qualidade (amostragem, especificações, validação de métodos)','Boas práticas laboratoriais (BPL)','Processos químicos industriais (reatores, operações unitárias)','Otimização de processos']],
+['Segurança química',['Riscos químicos (toxicidade, inflamabilidade, corrosividade)','FISPQ','Armazenamento e manuseio (compatibilidade, rotulagem)','Emergências químicas','Segurança com inflamáveis e combustíveis, sinalização']]].map(a=>({n:a[0],t:a[1].map(x=>({x:x,d:0}))}))}
+function def(){return{anchor:'2026-11-27',every:4,swaps:{},go:{},hab:{},est:mkEst(),estV:2,todo:{},hlog:[],hstart:'2026-11-10',peso:[],dieta:'',rot:{plantao:[{t:'05:00',n:'Acordar'},{t:'06:00',n:'Treino de musculação na Smart Fit'},{t:'08:00',n:'Entrada no plantão'}],pos:[{t:'08:00',n:'Saída do plantão'},{t:'09:00',n:'Chegada na UERJ'},{t:'16:00',n:'Ônibus de volta da UERJ'},{t:'17:00',n:'Treino na Smart Fit'}],posf:[{t:'08:00',n:'Saída do plantão'},{t:'09:30',n:'Treino ao chegar em Resende'}],uerj:[{t:'07:00',n:'Aula ou treino da manhã'},{t:'09:00',n:'Ônibus para a UERJ'},{t:'10:00',n:'Chegada na UERJ'},{t:'18:00',n:'Ônibus de volta da UERJ'}],folga:[{t:'09:00',n:'Treino ou cardio'}]},aulas:[{id:'a1',wd:1,t:'07:45',n:'Zumba'},{id:'a2',wd:3,t:'07:45',n:'Zumba'},{id:'a3',wd:5,t:'07:45',n:'Zumba'},{id:'a4',wd:2,t:'07:00',n:'Spinning'},{id:'a5',wd:4,t:'07:00',n:'Spinning'},{id:'a6',wd:2,t:'15:45',n:'Spinning'},{id:'a7',wd:5,t:'08:45',n:'Spinning'}],perDay:5,days:[1,2,3,4],daily:['Estudar INB (2h)','Treino','Questões da banca'],checks:{},
+camps:[['Jan/2025',11,11],['Mar/2025',11,11],['Mai/2025',9,0],['Jul/2025',11,0],['Set/2025',11,0],['Nov/2025',11,0],['Jan/2026',11,0],['Mar/2026',11,0],['Mai/2026',11,0]].map(a=>({n:a[0],t:a[1],d:a[2]})),
+ev:[
+{id:'curva',date:'2026-11-26',title:'Curva de calibração (Pegasus)',type:'inj'},
+{id:'e1',date:'2026-12-06',title:'Aula experimental de francês',type:'aula'},
+{id:'e2',date:'2026-12-08',title:'Pagar a taxa do passaporte (prazo)',type:'conta'},
+{id:'e3',date:'2026-12-08',title:'Feriado: Nossa Senhora da Conceição',type:'feriado'},
+{id:'e4',date:'2026-12-19',title:'Consulta com a nutricionista',type:'saude'},
+{id:'e5',date:'2026-12-22',title:'Resultado da homologação do PDSE',type:'pdse'},
+{id:'e6',date:'2026-12-22',end:'2027-01-03',title:'Recesso da UERJ',type:'feriado'},
+{id:'e7',date:'2026-12-25',title:'Natal',type:'feriado'},
+{id:'e8',date:'2027-01-01',title:'Ano Novo',type:'feriado'},
+{id:'e9',date:'2027-01-10',title:'Prova do INB (Químico)',type:'estudo'},
+{id:'f1',date:'2026-11-25',title:'Enviar o peso para a nutricionista',type:'saude'},
+{id:'f2',date:'2026-11-22',title:'Medidas caseiras',type:'saude'},
+{id:'f3',date:'2026-11-29',title:'Medidas caseiras',type:'saude'},
+{id:'f4',date:'2026-12-01',title:'Marcar o endocrinologista',type:'saude'}]}}
+function load(){try{const x=JSON.parse(localStorage.getItem(K));if(x&&x.ev){const d=def();x.aulas=x.aulas||d.aulas;x.go=x.go||{};x.rot=x.rot||d.rot;x.dieta=x.dieta==null?d.dieta:x.dieta;x.peso=x.peso||d.peso;x.hab=x.hab||{};x.hlog=x.hlog||[];if(x.estV!==2){x.est=d.est;x.estV=2}x.est=x.est||d.est;x.todo=x.todo||{};x.hstart=x.hstart||'2026-11-10';x.ev.forEach(e=>{if(e.id==='e4')e.type='saude';if(e.id==='e2')e.type='conta'});if(!x.ev.some(e=>e.id==='f1'))x.ev.push(...d.ev.filter(e=>e.id[0]==='f'));return x}}catch(e){}return def()}
+function sv(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+let S=load(),tm='lembrete',tab='hoje',sel=iso(new Date()),cur=new Date();cur=new Date(cur.getFullYear(),cur.getMonth(),1);
+const shift=s=>{if(s in S.swaps)return !!S.swaps[s];return dd(s,S.anchor)%S.every===0};
+const evOn=s=>S.ev.filter(e=>(s>=e.date&&s<=(e.end||e.date))||(e.rep&&s>e.date&&s<=e.rep&&dd(s,e.date)%7===0)).sort((a,b)=>(a.time||'99').localeCompare(b.time||'99'));
+function proj(){let r=S.camps.reduce((a,c)=>a+Math.max(0,c.t-c.d),0);const r0=r;let n=0,d=new Date(),k=0,last=null;
+while(r>0&&k++<900){const s=iso(d);if(S.days.includes(d.getDay())&&!shift(s)&&!evOn(s).some(e=>e.type==='feriado'||e.id==='curva')){r-=S.perDay;n++;last=s}d=add(d,1)}
+return{r0,n,fim:last}}
+const evRow=(e,s)=>`<div class="ev" onclick="openEv('${e.id}')"><i style="background:var(--${e.type})"></i><div><b>${esc(e.title)}</b><small>${s?WD[P(s).getDay()]+' '+br(s)+(e.time?', ':''):''}${e.time||''}${(s||e.time)?', ':''}${T[e.type]}${e.end?', até '+br(e.end):''}</small></div></div>`;
+const days=s=>{const n=dd(s,iso(new Date()));return n<0?'passou':n===0?'hoje':n+' d'};
+const clsOn=s=>{if(shift(s))return[];const post=shift(iso(add(P(s),-1))),fer=evOn(s).some(e=>e.type==='feriado'&&!/recesso/i.test(e.title));if(fer)return[];return S.aulas.filter(a=>a.wd===P(s).getDay()&&!(post&&a.t<'09:00')).sort((a,b)=>a.t.localeCompare(b.t))};
+const clsRows=s=>clsOn(s).map(a=>{const on=S.go[s+'|'+a.id];return `<div class="ev" onclick="tgC('${s}','${a.id}')"><i style="background:var(--treino);opacity:${on?1:.3}"></i><div><b>${esc(a.n)}, ${a.t}</b><small>${on?'Vou':'Possibilidade, toque para marcar'}</small></div></div>`}).join('');
+function tgC(s,id){const k=s+'|'+id;if(S.go[k])delete S.go[k];else S.go[k]=1;sv();R()}
+function au(i,k,v){S.aulas[i][k]=v;sv();R()}
+function addAu(){S.aulas.push({id:'a'+Date.now(),wd:1,t:'19:00',n:'Fit dance'});sv();R()}
+function delAu(i){S.aulas.splice(i,1);sv();R()}
+const RT={plantao:'Dia de plantão',pos:'Saída de plantão, direto para a UERJ',posf:'Saída de plantão, sem UERJ',uerj:'Dia de UERJ',folga:'Dia livre'};
+function dtype(s){const prev=shift(iso(add(P(s),-1))),fer=evOn(s).some(e=>e.type==='feriado'),u=S.days.includes(P(s).getDay())&&!fer;if(shift(s))return'plantao';if(prev)return u?'pos':'posf';return u?'uerj':'folga'}
+const rotRows=s=>{const k=dtype(s);return '<small>'+RT[k]+'</small>'+S.rot[k].slice().sort((a,b)=>a.t.localeCompare(b.t)).map(x=>`<div class="ev" style="cursor:default"><b style="min-width:52px">${x.t}</b><div>${esc(x.n)}</div></div>`).join('')};
+function ro(k,i,f,v){S.rot[k][i][f]=v;sv();R()}
+function roD(k,i){S.rot[k].splice(i,1);sv();R()}
+function roA(k){S.rot[k].push({t:'12:00',n:'Novo passo'});sv();R()}
+function vRot(){return `<div style="padding-top:18px"><h2>Rotina por tipo de dia</h2><small>O app escolhe o tipo de cada dia pela escala de plantão. Edite horários e passos.</small></div>`+Object.keys(RT).map(k=>`<div class="card"><h3>${RT[k]}</h3>${S.rot[k].map((x,i)=>`<div class="rw" style="margin-top:6px"><input type="time" value="${x.t}" onchange="ro('${k}',${i},'t',this.value)"><input value="${esc(x.n)}" onchange="ro('${k}',${i},'n',this.value)"><button class="g" onclick="roD('${k}',${i})">×</button></div>`).join('')}<div style="margin-top:10px"><button class="g" onclick="roA('${k}')">Novo passo</button></div></div>`).join('')}
+const op=(t,m)=>`tab='${t}';${m?`tm='${m}';`:''}R();scrollTo(0,0)`;
+const tiles=()=>[['🗓️','Plantões','ag'],['⏰','Rotina','rot'],['🧪','Doutorado','tema','dout'],['💪','Treino','tema','trn'],['📚','Estudos','tema','estudo'],['🇫🇷','Francês','tema','aula'],['✈️','PDSE','tema','pdse'],['🥗','Fitness','tema','fit'],['💰','Contas','tema','conta'],['🔔','Lembretes','tema','lembrete']].map(a=>`<button onclick="${op(a[2],a[3])}"><span>${a[0]}</span>${a[1]}</button>`).join('');
+const gr=()=>{const h=new Date().getHours();return h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'};
+function vFit(){const t0=iso(new Date()),mk=t0.slice(0,7),h=S.hab[mk]||{livre:0,belisc:0,alcool:0,gym:0},H=[['livre','Refeições livres'],['belisc','Beliscadas'],['alcool','Álcool'],['gym','Dias de academia']],last=S.peso[S.peso.length-1],nx=S.ev.filter(e=>/^consulta/i.test(e.title)&&e.date>=t0).sort((a,b)=>a.date.localeCompare(b.date))[0],hp='Contagem de '+br(S.hstart)+' até '+(nx?br(nx.date)+', consulta com a nutricionista':'a próxima consulta')+'.';
+const evs=S.ev.filter(e=>e.type==='saude'&&(e.end||e.date)>=t0).sort((a,b)=>a.date.localeCompare(b.date)).map(e=>evRow(e,e.date)).join('')||'<small>Nada marcado.</small>';
+return `<div style="padding-top:18px"><h2>Vida fitness</h2></div>
+<div class="card"><h3>Consultas, exames e medidas</h3>${evs}<div style="margin-top:8px"><button onclick="openEv('','${t0}','saude')">Novo</button></div></div>
+<div class="card"><h3>Peso e cintura</h3>${last?`<b>${last.kg} kg, cintura ${last.cm} cm</b><small style="display:block">Em ${brY(last.d)}. Meta: fechar 2026 abaixo de 90 kg (faltam ${Math.max(0,last.kg-90).toFixed(1)} kg).</small>`:''}<div class="rw" style="margin-top:8px"><input id="p-k" type="number" step="0.1" placeholder="kg"><input id="p-c" type="number" step="0.5" placeholder="cintura, cm"><button onclick="addP()">Registrar</button></div></div>
+<div class="card"><h3>Hábitos até a próxima consulta</h3><small>${hp}</small><div class="rw" style="margin-top:8px"><small>Marcar no dia</small><input type="date" value="${hdv||t0}" onchange="hdv=this.value"></div>${H.map(a=>{const Lg=S.hlog.map((x,i)=>[x,i]).filter(y=>y[0].k===a[0]&&y[0].d>=S.hstart).sort((p,q)=>p[0].d.localeCompare(q[0].d));return `<div style="margin-top:10px"><div class="rw"><b>${a[1]}: ${Lg.length}</b><button onclick="hb('${a[0]}')">+ marcar</button></div><div>${Lg.map(y=>`<button class="g" style="margin:4px 4px 0 0;padding:4px 10px" onclick="hrm(${y[1]})">${br(y[0].d)} ×</button>`).join('')}</div></div>`}).join('')}<label>Contar desde<input type="date" value="${S.hstart}" onchange="S.hstart=this.value;sv();R()"></label><small style="display:block;margin-top:6px">Toque numa data para apagar a marca.</small><h3 style="margin-top:14px">Fui à consulta</h3><small>Começa uma nova contagem a partir da data da consulta. As marcas antigas ficam guardadas.</small><label>Data da consulta que fiz<input id="nc-d" type="date" value="${t0}"></label><label>Próxima consulta (opcional)<input id="nc-n" type="date"></label><button style="margin-top:8px" onclick="novaC()">Começar nova contagem</button></div>
+<div class="card"><h3>Plano alimentar</h3><textarea rows="9" onchange="S.dieta=this.value;sv()">${esc(S.dieta)}</textarea></div>`}
+function addP(){const k=+$('#p-k').value,c=+$('#p-c').value,l=S.peso[S.peso.length-1];if(!k)return;S.peso.push({d:iso(new Date()),kg:k,cm:c||(l?l.cm:0)});sv();R()}
+let hdv='';
+function hb(k){S.hlog.push({d:hdv||iso(new Date()),k:k});sv();R()}
+function hrm(i){S.hlog.splice(i,1);sv();R()}
+function novaC(){const d=$('#nc-d').value,n=$('#nc-n').value;if(!d)return;S.hstart=d;if(n)S.ev.push({id:'e'+Date.now(),date:n,title:'Consulta com a nutricionista',type:'saude'});sv();R()}
+const todoCard=k=>{const a=S.todo[k]||[];return `<div class="card"><h3>A fazer</h3>${a.map((x,i)=>`<div class="rw" style="margin-top:6px"><label class="ck" style="flex:1;margin:0"><input type="checkbox" ${x.d?'checked':''} onchange="tdT('${k}',${i})"><span style="${x.d?'text-decoration:line-through;opacity:.6':''}">${esc(x.x)}</span></label><button class="g" style="padding:4px 10px" onclick="tdD('${k}',${i})">×</button></div>`).join('')}<div class="rw" style="margin-top:8px"><input id="td-${k}" placeholder="Nova tarefa"><button onclick="tdA('${k}')">Adicionar</button></div></div>`};
+function tdT(k,i){const x=S.todo[k][i];x.d=x.d?0:1;sv();R()}
+function tdD(k,i){S.todo[k].splice(i,1);sv();R()}
+function tdA(k){const v=$('#td-'+k).value.trim();if(!v)return;(S.todo[k]=S.todo[k]||[]).push({x:v,d:0});sv();R()}
+function eT(g,t){const x=S.est[g].t[t];x.d=x.d?0:1;sv();R()}
+function eD(g,t){S.est[g].t.splice(t,1);sv();R()}
+function eA(g){const v=$('#ea'+g).value.trim();if(v){S.est[g].t.push({x:v,d:0});sv();R()}}
+function eM(g){$('#em'+g).value.split('\n').map(s=>s.trim()).filter(Boolean).forEach(x=>S.est[g].t.push({x:x,d:0}));sv();R()}
+function eG(){const v=$('#eg').value.trim();if(v){S.est.push({n:v,t:[]});sv();R()}}
+function vEst(){const all=S.est.reduce((a,g)=>a.concat(g.t),[]),dn=all.filter(x=>x.d).length;
+return `<div style="padding-top:18px"><h2>Estudos INB</h2><small>Prova em ${brY('2027-01-10')}, ${days('2027-01-10')}.</small></div>
+<div class="card"><b>${dn} de ${all.length} tópicos estudados</b><div class="bar"><b style="width:${all.length?dn/all.length*100:0}%"></b></div></div>`+S.est.map((g,gi)=>{const f=g.t.filter(x=>!x.d).length;return `<div class="card"><h3>${esc(g.n)}</h3><small>${g.t.length?'Falta estudar: '+f+' de '+g.t.length:'Sem tópicos ainda. Cole a lista do edital abaixo.'}</small>${g.t.map((x,ti)=>`<div class="rw" style="margin-top:6px"><label class="ck" style="flex:1;margin:0"><input type="checkbox" ${x.d?'checked':''} onchange="eT(${gi},${ti})"><span style="${x.d?'text-decoration:line-through;opacity:.6':''}">${esc(x.x)}</span></label><button class="g" style="padding:4px 10px" onclick="eD(${gi},${ti})">×</button></div>`).join('')}<div class="rw" style="margin-top:8px"><input id="ea${gi}" placeholder="Novo tópico"><button onclick="eA(${gi})">Adicionar</button></div><label>Colar vários (um por linha)<textarea id="em${gi}" rows="3"></textarea></label><button class="g" style="margin-top:6px" onclick="eM(${gi})">Adicionar lista</button></div>`}).join('')+`<div class="card"><h3>Nova matéria</h3><div class="rw"><input id="eg" placeholder="Nome"><button onclick="eG()">Criar</button></div></div>`+todoCard('estudo')}
+function vTema(){if(tm==='fit')return vFit();if(tm==='estudo')return vEst();const L={trn:'Treino',dout:'Doutorado',estudo:'Estudos',aula:'Francês e aulas',pdse:'PDSE',lembrete:'Lembretes'},t0=iso(new Date());let b;
+if(tm==='trn'){let r='';for(let i=0;i<7;i++){const s=iso(add(new Date(),i));if(clsOn(s).length)r+='<small>'+WD[P(s).getDay()]+' '+br(s)+'</small>'+clsRows(s)}b=r||'<small>Sem aulas nos próximos dias.</small>'}
+else b=S.ev.filter(e=>e.type===tm&&(e.end||e.date)>=t0).sort((a,b)=>a.date.localeCompare(b.date)).map(e=>evRow(e,e.date)).join('')||'<small>Nada marcado.</small>';
+return `<div style="padding-top:18px"><h2>${L[tm]}</h2></div><div class="card">${b}${tm==='trn'?'':`<div style="margin-top:8px"><button onclick="openEv('','${t0}','${tm}')">Novo</button></div>`}</div>${tm==='dout'?`<div class="card"><button onclick="tab='inj';R()">Controle das injeções no Pegasus</button></div>`:''}${todoCard(tm)}`}
+function vHoje(){const d=new Date(),t=iso(d),ck=S.checks[t]||[],pl=shift(t),pa=shift(iso(add(d,1))),r=proj(),up=[];
+for(let i=1;i<=14;i++){const s=iso(add(d,i));evOn(s).forEach(e=>up.push(evRow(e,s)))}
+const nx=[];for(let i=0;i<=30&&nx.length<5;i++){const s=iso(add(d,i));if(shift(s))nx.push(br(s))}
+return `<div style="padding-top:18px"><div style="font-weight:800;font-size:18px;color:var(--acc)">Ma vie</div><h2 style="font-size:26px">${gr()}, Bárbara</h2><small>Como vai ser hoje?</small></div><div class="tl">${tiles()}</div><div style="padding-top:6px"><small>${WD[d.getDay()]}, ${MS[d.getMonth()]} de ${d.getFullYear()}</small><div class="big">${d.getDate()}</div><b>${pl?'Plantão hoje, das 8h às 8h':pa?'Plantão amanhã':'Sem plantão hoje'}</b></div>
+<div class="card"><h3>Rotina do dia</h3>${rotRows(t)}</div><div class="card"><h3>Hoje</h3>${evOn(t).map(e=>evRow(e)).join('')||'<small>Nada na agenda de hoje.</small>'}<div style="margin-top:8px"><button class="g" onclick="openEv('','${t}')">Novo evento</button></div></div>
+${clsOn(t).length?`<div class="card"><h3>Aulas na Smart Fit</h3>${clsRows(t)}</div>`:''}<div class="card"><h3>Checklist do dia</h3>${S.daily.map((x,i)=>`<label class="ck"><input type="checkbox" ${ck.includes(i)?'checked':''} onchange="tg('${t}',${i})">${esc(x)}</label>`).join('')}</div>
+<div class="t3"><div><small>Prova INB</small><b>${days('2027-01-10')}</b></div><div><small>Resultado PDSE</small><b>${days('2026-12-22')}</b></div><div><small>Amostras a injetar</small><b>${r.r0}</b></div></div>
+<div class="card"><h3>Próximos 14 dias</h3>${up.join('')||'<small>Nada marcado.</small>'}<small style="display:block;margin-top:8px">Próximos plantões: ${nx.join(', ')}</small></div>`}
+function vAg(){const y=cur.getFullYear(),m=cur.getMonth(),f=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate(),td=iso(new Date());let c='';
+for(let i=0;i<f;i++)c+='<span></span>';
+for(let k=1;k<=n;k++){const s=y+'-'+p2(m+1)+'-'+p2(k);c+=`<button class="dy ${shift(s)?'pl':''} ${s===sel?'sel':''} ${s===td?'td':''}" onclick="sel='${s}';R()">${k}<span class="dts">${evOn(s).slice(0,3).map(e=>`<b style="background:var(--${e.type})"></b>`).join('')}${clsOn(s).some(a=>S.go[s+'|'+a.id])?'<b style="background:var(--treino)"></b>':''}</span></button>`}
+return `<div class="rw" style="padding-top:18px"><button class="g" onclick="mv(-1)">‹</button><h2 style="text-align:center">${MS[m]} ${y}</h2><button class="g" onclick="mv(1)">›</button></div>
+<div class="card"><div class="g7 m" style="margin-bottom:4px">${WD.map(w=>`<small>${w}</small>`).join('')}</div><div class="g7">${c}</div><small style="display:block;margin-top:8px">Fundo azul: dia de plantão. Ponto rosa: aula marcada.</small></div>
+<div class="card"><h3>${WD[P(sel).getDay()]}, ${brY(sel)}</h3><div class="rw" style="margin-bottom:6px"><small>${shift(sel)?'Plantão neste dia':'Sem plantão neste dia'}</small><button class="g" onclick="togSh('${sel}')">${shift(sel)?'Tirar plantão (troca ou folga)':'Marcar plantão (troca)'}</button></div>
+${evOn(sel).map(e=>evRow(e)).join('')||'<small>Nada marcado.</small>'}${clsOn(sel).length?'<h3 style="margin-top:10px">Aulas na Smart Fit</h3>'+clsRows(sel):''}<h3 style="margin-top:10px">Rotina do dia</h3>${rotRows(sel)}<div style="margin-top:8px"><button onclick="openEv('','${sel}')">Novo evento</button></div></div>`}
+function vInj(){const r=proj(),cv=S.ev.find(e=>e.id==='curva');
+return `<div style="padding-top:18px"><h2>Injeções no Pegasus</h2></div>
+<div class="card"><b>${r.r0?`Faltam ${r.r0} amostras (${r.r0*3} injeções em triplicata)`:'Tudo injetado'}</b>
+<small style="display:block">${r.r0?(r.fim?`Previsão de término: ${brY(r.fim)}, em ${r.n} dias de injeção.`:'Sem dias de injeção livres. Revise os ajustes.'):''}</small>
+<label>Dia da curva de calibração<input type="date" value="${cv?cv.date:''}" onchange="curva(this.value)"></label></div>
+<div class="card"><h3>Campanhas</h3>${S.camps.map((c,i)=>`<div class="cp"><div class="rw"><input value="${esc(c.n)}" onchange="cp(${i},'n',this.value)"><button onclick="cp(${i},'d',${c.d+1})">+1</button><button class="g" onclick="delCp(${i})">Excluir</button></div>
+<div class="rw" style="margin-top:6px"><small>feitas</small><input type="number" min="0" value="${c.d}" onchange="cp(${i},'d',this.value)"><small>de</small><input type="number" min="0" value="${c.t}" onchange="cp(${i},'t',this.value)"></div><div class="bar"><b style="width:${c.t?Math.min(100,c.d/c.t*100):0}%"></b></div></div>`).join('')}
+<button class="g" onclick="addCp()">Nova campanha</button></div>`}
+function vAj(){return `<div style="padding-top:18px"><h2>Ajustes</h2></div>
+<div class="card"><h3>Escala de plantão</h3><label>Um dia de plantão (ponto de partida)<input type="date" value="${S.anchor}" onchange="S.anchor=this.value;sv();R()"></label>
+<label>Repete a cada quantos dias<input type="number" min="2" value="${S.every}" onchange="S.every=Math.max(2,+this.value||4);sv();R()"></label>
+<small style="display:block;margin-top:6px">Troca ou folga pontual: na Agenda, toque no dia.</small></div>
+<div class="card"><h3>Injeções</h3><label>Amostras (triplicatas) por dia<input type="number" min="1" value="${S.perDay}" onchange="S.perDay=Math.max(1,+this.value||5);sv();R()"></label>
+<label>Dias da semana na UERJ</label><div class="rw" style="flex-wrap:wrap">${[1,2,3,4,5,6,0].map(i=>`<label class="ck"><input type="checkbox" ${S.days.includes(i)?'checked':''} onchange="wd(${i},this.checked)">${WD[i]}</label>`).join('')}</div></div>
+<div class="card"><h3>Aulas da Smart Fit</h3><small>Grade semanal. Em Hoje ou na Agenda você marca a que vai fazer.</small>${S.aulas.map((a,i)=>`<div class="rw" style="margin-top:8px"><select onchange="au(${i},'wd',+this.value)">${[1,2,3,4,5,6,0].map(w=>`<option value="${w}" ${w===a.wd?'selected':''}>${WD[w]}</option>`).join('')}</select><input type="time" value="${a.t}" onchange="au(${i},'t',this.value)"><input value="${esc(a.n)}" onchange="au(${i},'n',this.value)"><button class="g" onclick="delAu(${i})">×</button></div>`).join('')}<div style="margin-top:10px"><button class="g" onclick="addAu()">Nova aula</button></div></div>
+<div class="card"><h3>Checklist do dia</h3><small>Um item por linha.</small><textarea rows="4" onchange="S.daily=this.value.split('\\n').map(x=>x.trim()).filter(Boolean);sv();R()">${esc(S.daily.join('\n'))}</textarea></div>
+<div class="card"><h3>Backup</h3><small>Seus dados ficam só neste aparelho. Gere o backup, copie o texto e guarde. Para restaurar, cole e carregue.</small>
+<textarea id="bk" rows="4"></textarea><div class="rw" style="margin-top:8px"><button class="g" onclick="$('#bk').value=JSON.stringify(S)">Gerar backup</button><button onclick="ld()">Carregar backup</button></div></div>`}
+function R(){const v={hoje:vHoje,ag:vAg,rot:vRot,inj:vInj,aj:vAj,tema:vTema}[tab]();$('#v').innerHTML=v;
+$('#nav').innerHTML=[['hoje','Hoje'],['ag','Agenda'],['rot','Rotina'],['inj','Injeções'],['aj','Ajustes']].map(a=>`<button class="${tab===a[0]?'on':''}" onclick="tab='${a[0]}';R();scrollTo(0,0)">${a[1]}</button>`).join('')}
+function mv(x){cur=new Date(cur.getFullYear(),cur.getMonth()+x,1);R()}
+function tg(t,i){const a=S.checks[t]||[],k=a.indexOf(i);k<0?a.push(i):a.splice(k,1);S.checks[t]=a;sv()}
+function togSh(s){const nat=dd(s,S.anchor)%S.every===0,nv=!shift(s);if(nv===nat)delete S.swaps[s];else S.swaps[s]=nv?1:0;sv();R()}
+function cp(i,k,v){S.camps[i][k]=k==='n'?v:Math.max(0,+v||0);sv();R()}
+function addCp(){S.camps.push({n:'Nova campanha',t:11,d:0});sv();R()}
+function delCp(i){S.camps.splice(i,1);sv();R()}
+function curva(v){const e=S.ev.find(x=>x.id==='curva');if(e&&v){e.date=v;sv();R()}}
+function wd(i,on){S.days=S.days.filter(x=>x!==i);if(on)S.days.push(i);sv();R()}
+function ld(){try{const x=JSON.parse($('#bk').value);if(!x.ev)throw 0;S=Object.assign(def(),x);sv();R()}catch(e){$('#bk').value='Backup inválido. Cole o texto completo gerado antes.'}}
+function closeS(){$('#sheet').innerHTML=''}
+function openEv(id,date,ty){const e=id?S.ev.find(x=>x.id===id):{date:date||sel,type:ty||'lembrete',title:''};
+$('#sheet').innerHTML=`<div class="bk" onclick="closeS()"></div><div class="sh"><h2>${id?'Editar evento':'Novo evento'}</h2>
+<label>Título<input id="f-t" value="${esc(e.title)}"></label>
+<label>Tipo<select id="f-y">${Object.keys(T).map(k=>`<option value="${k}" ${k===e.type?'selected':''}>${T[k]}</option>`).join('')}</select></label>
+<label>Data<input id="f-d" type="date" value="${e.date}"></label>
+<label>Até (opcional, para períodos)<input id="f-e" type="date" value="${e.end||''}"></label>
+<label>Horário (opcional)<input id="f-h" type="time" value="${e.time||''}"></label>
+<label>Repetir toda semana até (opcional)<input id="f-r" type="date" value="${e.rep||''}"></label>
+<div class="rw" style="margin-top:14px"><button onclick="saveEv('${id||''}')">Salvar</button>${id&&id!=='curva'?`<button class="r" onclick="delEv('${id}')">Excluir</button>`:''}<button class="g" onclick="closeS()">Cancelar</button></div></div>`}
+function saveEv(id){const o={title:$('#f-t').value.trim(),type:$('#f-y').value,date:$('#f-d').value,end:$('#f-e').value,time:$('#f-h').value,rep:$('#f-r').value};
+if(!o.title||!o.date){$('#f-t').style.borderColor='var(--feriado)';return}
+['end','time','rep'].forEach(k=>{if(!o[k])delete o[k]});
+if(id){Object.assign(S.ev.find(x=>x.id===id),o);['end','time','rep'].forEach(k=>{if(!o[k])delete S.ev.find(x=>x.id===id)[k]})}else{o.id='e'+Date.now();S.ev.push(o)}
+sv();closeS();R()}
+function delEv(id){S.ev=S.ev.filter(x=>x.id!==id);sv();closeS();R()}
+R();
+</script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})</script></body></html>
